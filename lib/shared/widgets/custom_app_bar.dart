@@ -9,13 +9,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
 
   const CustomAppBar({
-    Key? key,
+    super.key,
     required this.title,
     this.actions,
     this.leading,
     this.centerTitle = true,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +28,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       centerTitle: centerTitle,
-      backgroundColor: backgroundColor ?? Colors.transparent,
+      backgroundColor: backgroundColor ?? AppColors.secondary,
       elevation: 0,
-      leading: leading,
+      automaticallyImplyLeading: false,
       actions: actions,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              AppColors.primary.withOpacity(0.1),
-              Colors.transparent,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-      ),
     );
   }
 
