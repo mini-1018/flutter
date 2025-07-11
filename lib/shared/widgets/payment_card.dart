@@ -18,7 +18,7 @@ class PaymentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 120,
+      height: 150,
       padding: const EdgeInsets.all(28),
       decoration: BoxDecoration(
         color: AppColors.grey300,
@@ -33,17 +33,16 @@ class PaymentCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(title),
-                amount != null ? SizedBox(height: 9) : SizedBox.shrink(),
-                amount != null
-                    ? Text(
-                        '${NumberFormat('#,###').format(amount!)}원',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
-                        ),
-                      )
-                    : SizedBox.shrink(),
+                if (amount != null) SizedBox(height: 9),
+                if (amount != null)
+                  Text(
+                    '${NumberFormat('#,###').format(amount!)}원',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primary,
+                    ),
+                  ),
               ],
             ),
           ),
@@ -52,9 +51,9 @@ class PaymentCard extends StatelessWidget {
             flex: 4,
             child: Align(
               alignment: Alignment.center,
-              child: Image.asset(icon, width: 60, height: 60),
+              child: Image.asset(icon, width: 80, height: 60),
+              ),
             ),
-          ),
         ],
       ),
     );

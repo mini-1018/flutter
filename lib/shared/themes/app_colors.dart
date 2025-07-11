@@ -16,5 +16,8 @@ class AppColors {
   static const Color error = Color(0xFFF44336);
   static const Color info = Color(0xFF2196F3);
 
+  static const Color grey100 = Color(0xFFF8F8F8);
+  static const Color grey200 = Color(0xFFE0E0E0);
   static const Color grey300 = Color(0xFFF0F0F0);
+  static const Color grey400 = Color(0xFFCCCCCA);
 }

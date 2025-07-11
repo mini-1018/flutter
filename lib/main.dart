@@ -1,7 +1,7 @@
-import 'package:app/features/pages/company_page.dart';
-import 'package:app/features/pages/login_page.dart';
+import 'package:app/features/pages/login/login_page.dart';
+import 'package:app/shared/themes/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:app/shared/themes/app_theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,13 +15,20 @@ class MyApp extends StatelessWidget {
       title: 'RFID APP',
       theme: ThemeData(
         fontFamily: 'Pretendard',
+        scaffoldBackgroundColor: AppColors.white,
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => LoginPage(),
-        '/company': (context) => CompanyPage(),
-      },
+      supportedLocales: const [
+        Locale('ko'),
+        Locale('en'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      home: LoginPage(),
     );
   }
 }

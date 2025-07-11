@@ -1,3 +1,5 @@
+import 'package:app/features/pages/company/company_page.dart';
+import 'package:app/features/pages/driver/driver_page.dart';
 import 'package:app/shared/themes/app_colors.dart';
 import 'package:app/shared/widgets/button.dart';
 import 'package:app/shared/widgets/input.dart';
@@ -36,7 +38,12 @@ class LoginForm extends StatelessWidget {
             height: 55,
           ),
           const SizedBox(height: 24.0),
-          Button(text: '로그인', onPressed: ()=> Navigator.pushNamed(context, '/company'), width: 255, height: 48, variant: ButtonVariant.primary, isDisabled: false, isLoading: false),
+          Button(text: '로그인', onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => DriverPage()),
+            );
+          }, width: 255, height: 48, variant: ButtonVariant.primary, isDisabled: false, isLoading: false),
         ],
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../themes/app_colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
   final List<Widget>? actions;
   final Widget? leading;
   final bool centerTitle;
@@ -10,7 +9,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const CustomAppBar({
     super.key,
-    required this.title,
     this.actions,
     this.leading,
     this.centerTitle = true,
@@ -20,21 +18,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),
-      ),
+      title: Image.asset('assets/images/jeju.png', width: 100,),
       centerTitle: centerTitle,
-      backgroundColor: backgroundColor ?? AppColors.secondary,
+      backgroundColor: backgroundColor ?? AppColors.white,
       elevation: 0,
       automaticallyImplyLeading: false,
       actions: actions,
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(1),
+        child: Container(
+          height: 1,
+          color: AppColors.grey200 // 원하는 색상으로 변경
+        ),
+      ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 1);
 }
