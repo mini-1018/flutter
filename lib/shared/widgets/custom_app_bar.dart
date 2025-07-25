@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Image.asset('assets/images/jeju.png', width: 100,),
       centerTitle: centerTitle,
-      backgroundColor: backgroundColor ?? AppColors.white,
+      backgroundColor: backgroundColor ?? white,
       elevation: 0,
       automaticallyImplyLeading: false,
       actions: actions,
@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: const Size.fromHeight(1),
         child: Container(
           height: 1,
-          color: AppColors.grey200 // 원하는 색상으로 변경
+          color: grey200 // 원하는 색상으로 변경
         ),
       ),
     );

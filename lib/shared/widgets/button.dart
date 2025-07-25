@@ -124,7 +124,7 @@ class Button extends StatelessWidget {
 
     switch (variant) {
       case ButtonVariant.primary:
-        return AppColors.primary;
+        return primary;
       case ButtonVariant.secondary:
         return Colors.grey[300]!;
       case ButtonVariant.outline:

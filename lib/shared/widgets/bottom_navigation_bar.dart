@@ -5,7 +5,6 @@ class BottomNavigationAppBar extends StatelessWidget {
   final int currentIndex;
   final void Function(int)? onTap;
 
-  /// [type] = 'company' 일 경우 결제내역조회 아이콘 추가 표시
   const BottomNavigationAppBar({super.key, this.currentIndex = 0, this.onTap});
   @override
   Widget build(BuildContext context) {
@@ -13,10 +12,10 @@ class BottomNavigationAppBar extends StatelessWidget {
       width: double.infinity,
       height: 80,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: white,
         border: Border(
           top: BorderSide(
-            color: AppColors.grey200,
+            color: grey200,
             width: 1,
           ),
         ),
@@ -31,10 +30,10 @@ class BottomNavigationAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset('assets/images/home.png', width: 24, height: 24,
-                    color: currentIndex == 0 ? AppColors.primary : null),
+                    color: currentIndex == 0 ? primary : null),
                   Text('홈', style: TextStyle(
                     fontSize: 12,
-                    color: currentIndex == 0 ? AppColors.primary : null,
+                    color: currentIndex == 0 ? primary : null,
                   )),
                 ],
               ),
@@ -47,10 +46,10 @@ class BottomNavigationAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset('assets/images/analyze.png', width: 24, height: 24,
-                      color: currentIndex == 1 ? AppColors.primary : null),
+                      color: currentIndex == 1 ? primary : null),
                   Text('결제내역조회', style: TextStyle(
                     fontSize: 12,
-                    color: currentIndex == 1 ? AppColors.primary : null,
+                    color: currentIndex == 1 ? primary : null,
                   )),
                 ],
               ),
@@ -63,10 +62,10 @@ class BottomNavigationAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset('assets/images/my_page.png', width: 24, height: 24,
-                    color: currentIndex == 2 ? AppColors.primary : null),
+                    color: currentIndex == 2 ? primary : null),
                   Text('마이페이지', style: TextStyle(
                     fontSize: 12,
-                    color: currentIndex == 2 ? AppColors.primary : null,
+                    color: currentIndex == 2 ? primary : null,
                   )),
                 ],
               ),

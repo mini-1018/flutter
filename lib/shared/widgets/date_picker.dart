@@ -33,13 +33,13 @@ class DatePicker extends StatelessWidget {
             return Theme(
               data: Theme.of(context).copyWith(
                 colorScheme: ColorScheme.light(
-                  primary: AppColors.primary,
-                  onPrimary: AppColors.white,
-                  onSurface: AppColors.textPrimary,
+                  primary: primary,
+                  onPrimary: white,
+                  onSurface: textPrimary,
                 ),
                 textButtonTheme: TextButtonThemeData(
                   style: TextButton.styleFrom(
-                    foregroundColor: AppColors.primary,
+                    foregroundColor: primary,
                   ),
                 ),
               ),
@@ -55,21 +55,21 @@ class DatePicker extends StatelessWidget {
         height: 40,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: AppColors.grey300,
+          color: grey300,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: 90,
+              width: 80,
               child: Text(
                 value != null
-                    ? "${value!.year}-${value!.month.toString().padLeft(2, '0')}-${value!.day.toString().padLeft(2, '0')}"
+                    ? "${(value!.year % 100).toString().padLeft(2, '0')}-${value!.month.toString().padLeft(2, '0')}-${value!.day.toString().padLeft(2, '0')}"
                     : label,
                 style: TextStyle(
                   fontSize: 16,
-                  color: AppColors.textPrimary,
+                  color: textPrimary,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -77,7 +77,7 @@ class DatePicker extends StatelessWidget {
             Icon(
               Icons.calendar_today,
               size: 20,
-              color: AppColors.textPrimary,
+              color: textPrimary,
             ),
           ],
         ),
@@ -85,4 +85,3 @@ class DatePicker extends StatelessWidget {
     );
   }
 }
-

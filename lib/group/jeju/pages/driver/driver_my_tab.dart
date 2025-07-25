@@ -1,53 +1,32 @@
+import 'package:app/group/jeju/common/mainContentTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:app/shared/themes/app_colors.dart';
 
-class MyTab extends StatelessWidget {
-  final String companyName;
-  final String companyOwner;
-  final String phoneNumber;
-  final String address;
-  final String tagInfo;
-  final String cardInfo;
+class DriverMyTab extends StatelessWidget {
+  final String driverId;
+  final String vehicleNumber = '12마1234';
 
-  const MyTab({
+  const DriverMyTab({
     super.key,
-    required this.companyName,
-    required this.companyOwner,
-    required this.phoneNumber,
-    required this.address,
-    required this.tagInfo,
-    required this.cardInfo,
+    required this.driverId
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 16),
-        Text(
-          '마이페이지',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 14),
+        MainContentTitle(title: '마이페이지'),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 18.5),
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 18),
           decoration: BoxDecoration(
-            color: AppColors.grey300,
+            color: grey300,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
             children: [
-              _buildInfoRow('업체명', companyName),
-              SizedBox(height: 14),
-              _buildInfoRow('대표자', companyOwner),
-              SizedBox(height: 14),
-              _buildInfoRow('연락처', phoneNumber),
-              SizedBox(height: 14),
-              _buildInfoRow('업체주소', address),
-              SizedBox(height: 14),
-              _buildInfoRow('태그정보', tagInfo),
-              SizedBox(height: 14),
-              _buildInfoRow('카드정보', cardInfo),
+              _buildInfoRow('ID', driverId),
+              const SizedBox(height: 14),
+              _buildInfoRow('차량번호', vehicleNumber),
             ],
           ),
         ),
@@ -62,7 +41,7 @@ class MyTab extends StatelessWidget {
       width: 255,
       constraints: BoxConstraints(minHeight: 55),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: white,
         borderRadius: BorderRadius.circular(10),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -73,9 +52,9 @@ class MyTab extends StatelessWidget {
             width: 70,
             child: Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
-                color: AppColors.textPrimary,
+                color: textPrimary,
               ),
             ),
           ),
@@ -84,9 +63,10 @@ class MyTab extends StatelessWidget {
             child: Text(
               value,
               textAlign: TextAlign.end,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
-                color: AppColors.textPrimary,
+                color: textPrimary,
+                fontWeight: FontWeight.bold,
               ),
               maxLines: null,
               overflow: TextOverflow.visible,
@@ -109,15 +89,16 @@ class MyTab extends StatelessWidget {
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: AppColors.grey400),
+          border: Border.all(color: grey400),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             '로그아웃',
-            style: TextStyle(fontSize: 16, color: AppColors.textPrimary),
+            style: TextStyle(fontSize: 16, color: textPrimary),
           ),
         ),
       ),
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'package:app/features/pages/login/login_page.dart';
+import 'package:app/group/default/pages/login/login_page.dart';
 import 'package:app/shared/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'RFID APP',
       theme: ThemeData(
         fontFamily: 'Pretendard',
-        scaffoldBackgroundColor: AppColors.white,
+        scaffoldBackgroundColor: white,
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,

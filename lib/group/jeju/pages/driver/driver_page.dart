@@ -1,5 +1,6 @@
-import 'package:app/features/pages/driver/driver_home_tab.dart';
-import 'package:app/features/pages/driver/driver_my_tab.dart';
+import 'package:app/group/jeju/pages/driver/driver_home_tab.dart';
+import 'package:app/group/jeju/pages/driver/driver_my_tab.dart';
+import 'package:app/group/jeju/pages/driver/driver_pay_log_tab.dart';
 import 'package:app/shared/widgets/bottom_navigation_bar.dart';
 import 'package:app/shared/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -52,33 +53,8 @@ class _DriverPageState extends State<DriverPage> with SingleTickerProviderStateM
         physics: NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: [
-          Center(child: Text('운전사 페이지')),
-          DriverHomeTab(driverLogs: [{
-            'date': DateTime.now(),
-            'weight': 30,
-            'tag': 'J000000',
-            'companyName': '길동치킨',
-          },{
-            'date': DateTime.now(),
-            'weight': 30,
-            'tag': 'J000000',
-            'companyName': '길동치킨',
-          },{
-            'date': DateTime.now(),
-            'weight': 30,
-            'tag': 'J000000',
-            'companyName': '길동치킨',
-          },{
-            'date': DateTime.now(),
-            'weight': 30,
-            'tag': 'J000000',
-            'companyName': '길동치킨',
-          },{
-            'date': DateTime.now(),
-            'weight': 30,
-            'tag': 'J000000',
-            'companyName': '길동치킨',
-          }]),
+          DriverHomeTab(),
+          DriverPayLogTab(),
           DriverMyTab(driverId: 'gtech21'),
         ],
       ),
